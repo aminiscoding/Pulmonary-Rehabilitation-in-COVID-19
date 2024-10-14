@@ -4,7 +4,7 @@ library(effsize)
 library(stats)
 library(writexl)
 
-primary_data <- read.spss("F:/ma life/Career/Proj/PR & SM/Submission/Canadian Journal of Infectious Diseases and Medical Microbiology/Revision/primary_data.sav", to.data.frame = TRUE)
+primary_data <- read.spss("File Address", to.data.frame = TRUE)
 
 Result_Descriptive <- data.frame(Topic = c("Education", "Employment", "Children", "Smoking", "Marraige", "Sex", "Age", "BMI", "VAS_Pre", "VAS_Post", "PHQ15_Pre", "PHQ15_Post", "BI_Pre", "BI_Post", "GHQ28_Somatic_Pre", "GHQ28_Somatic_Post", "GHQ28_AnxietyInsomnia_Pre", "GHQ28_AnxietyInsomnia_Post", "GHQ28_SocialDysfunction_Pre", "GHQ28_SocialDysfunction_Post", "GHQ28_SevereDepression_Pre", "GHQ28_SevereDepression_Post", "GHQ28_Pre", "GHQ28_Post", "Alcohol"), Mean_Online = c(NA), SD_Online = c(NA), Mean_Brochure = c(NA), SD_Brochure = c(NA))
 Result_Inferential <- data.frame(Topic = c("Education", "Employment", "Children", "Smoking", "Marraige", "Sex", "Age", "BMI", "VAS", "PHQ15", "BI", "GHQ28_Somatic","GHQ28_AnxietyInsomnia", "GHQ28_SocialDysfunction", "GHQ28_SevereDepression", "GHQ28", "Alcohol"), Between = NA, CI = NA, Effect_Size = NA, Within_Online = NA, CI_Online = NA, Effect_Size_Online = NA, Within_Brochure = NA, CI_Brochure = NA, Effect_Size_Brochure = NA)
@@ -408,5 +408,5 @@ Result_Inferential[16, 9] <- paste(round(cohen.d(GHQ28_Pre_Brochure, GHQ28_Post_
 Result_Inferential[16, 10] <- round(cohen.d(GHQ28_Pre_Brochure, GHQ28_Post_Brochure, paired = TRUE)$estimate, 3)
 
 ###################################### Exporting to Excel ######################################
-write_xlsx(Result_Descriptive, "F:/ma life/Career/Proj/PR & SM/Submission/Canadian Journal of Infectious Diseases and Medical Microbiology/Revision/Descriptive.xlsx")
-write_xlsx(Result_Inferential, "F:/ma life/Career/Proj/PR & SM/Submission/Canadian Journal of Infectious Diseases and Medical Microbiology/Revision/Inferential.xlsx")
+write_xlsx(Result_Descriptive, "File Address")
+write_xlsx(Result_Inferential, "File Address")
